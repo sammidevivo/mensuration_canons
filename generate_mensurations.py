@@ -39,7 +39,8 @@ def generate_mensurations(cantus_firmus: Melody):
             generate_score(cantus_firmus, counterpoint, trans, aug, "cantus firmus", "counterpoint")
     
 
-josqin = Melody([62,62,62,65,62,65,67,69], [1,1,1,1.5,0.5,0.75,0.25,2])
+josqin = Melody([62,62,62,65,62,65,67,69,69,69,67,65], 
+                [1,1,1,1.5,0.5,0.75,0.25,2,1,1.5,0.5,1])
 josqin_counterpoint = Melody([62,62,62,65,62,65,67,69], [x * 1.5 for x in josqin.durations])
 
 cantus_firmus = Melody([62, 65.5, 63.5, 62, 65.5, 69, 67, 71, 69, 67, 63.5, 65.5, 63.5, 62], [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0])

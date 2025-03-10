@@ -25,12 +25,12 @@ def generate_score(melody_1: Melody, melody_2: Melody, trans, aug, inst_1: str, 
     # Export as PDF
     score = s.stop_transcribing().to_score(title=name)
     file_path = os.path.join(output_dir, file_name)
-    score.show()
+    # score.show()
     score.export_pdf(file_path)
     
 
 def generate_mensurations(cantus_firmus: Melody):
-    transpositions = [7]
+    transpositions = [0, 3, 4, 7, 8, 9, 12]
     augmentations = [2/1, 3/1, 4/1, 5/1, 6/1, 7/1, 3/2, 5/2, 7/2, 4/3, 5/3, 7/3, 5/4, 7/4, 6/5, 7/5, 7/6]
 
     for aug in augmentations:
@@ -44,3 +44,4 @@ josqin = Melody([62,62,62,65,62,65,67,69,69,69,67,65],
 josqin_counterpoint = Melody([62,62,62,65,62,65,67,69], [x * 1.5 for x in josqin.durations])
 
 cantus_firmus = Melody([62, 65.5, 63.5, 62, 65.5, 69, 67, 71, 69, 67, 63.5, 65.5, 63.5, 62], [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0])
+generate_mensurations(cantus_firmus)
